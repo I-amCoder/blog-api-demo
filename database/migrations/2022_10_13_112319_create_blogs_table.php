@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug');
             $table->tinyText('summary');
-            $table->tinyInteger('published');
+            $table->tinyInteger('published')->default(0);
             $table->longText('content');
-            $table->date('published_at');
+            $table->date('published_at')->nullable();
             $table->unsignedBigInteger('blog_category_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();

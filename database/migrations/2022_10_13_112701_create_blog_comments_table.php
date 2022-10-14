@@ -17,10 +17,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('blog_id');
             $table->unsignedBigInteger('added_by');
-            $table->tinyInteger('is_published');
-            $table->date('publised_at');
+            $table->tinyInteger('is_published')->default(0);
+            $table->date('publised_at')->nullable();
             $table->text('content');
-            $table->tinyInteger('contains_childs');
+            $table->tinyInteger('contains_childs')->default(0);
             $table->timestamps();
 
             $table->foreign('blog_id')->references('id')->on('blogs');

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('blog_categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->tinyInteger('isActive');
+            $table->tinyInteger('isActive')->default(1);
             $table->integer('level');
             $table->timestamps();
         });
